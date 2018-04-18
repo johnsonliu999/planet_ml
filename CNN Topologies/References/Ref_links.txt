@@ -1,0 +1,6 @@
+1. Convolutional Neural Network (CNN) | Convolutional Neural Networks With TensorFlow | Edureka
+   https://www.youtube.com/watch?v=umGJ30-15_A
+2. TFLearn - Deep Learning with Neural Networks and TensorFlow p. 14 - https://www.youtube.com/watch?v=NMd7WjZiCzc
+3. TFlearn - http://tflearn.org/examples/
+4. CNN Layers Visualization - https://github.com/InFoCusp/tf_cnnvis
+5. 

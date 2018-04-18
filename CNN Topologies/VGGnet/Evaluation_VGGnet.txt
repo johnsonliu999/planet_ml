@@ -1,0 +1,6 @@
+Precision: 0.965
+Recall: 0.9698492462311558
+Accuracy: 0.9837449202875899
+F-measure: 0.9674185463659147
+
+Training time: ~2.5 hrs
