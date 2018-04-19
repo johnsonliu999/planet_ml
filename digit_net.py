@@ -58,7 +58,8 @@ class Net(object):
 
     # training samples is [(input, ideal_output), ...]
     def train(self, training_samples):
-        for input_data, ideal_output in training_samples:
+        for input_data, label in training_samples:
+            ideal_output = label
             output = self.feed_forward(input_data)
             output_error = self.cal_output_error(output, ideal_output)
             self.back_propagate(output_error)
@@ -109,7 +110,7 @@ class Net(object):
         test_result = [(np.argmax(self.feed_forward(x)), y) for (x, y) in test_data]
         ret = sum(int(x == y) for (x, y) in test_result)
         print("accuracy: %d / %d = %f" % (ret, n, ret / n))
-        return ret
+        return ret / n
 
 
 # available activate functions

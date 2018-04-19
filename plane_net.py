@@ -58,7 +58,8 @@ class Net(object):
 
     # training samples is [(input, ideal_output), ...]
     def train(self, training_samples):
-        for input_data, ideal_output in training_samples:
+        for input_data, label in training_samples:
+            ideal_output = self.__vectorize(label)
             output = self.feed_forward(input_data)
             output_error = self.cal_output_error(output, ideal_output)
             self.back_propagate(output_error)
@@ -114,10 +115,12 @@ class Net(object):
         for x, y in test_data:
             out = np.argmax(self.feed_forward(x))
             if y == 0:
-                if out == 0: zeros_pos += 1
+                if out == 0:
+                    zeros_pos += 1
                 zeros += 1
             if y == 1:
-                if out == 1: ones_pos += 1
+                if out == 1:
+                    ones_pos += 1
                 ones += 1
 
         print("zeros: %d / %d " % (zeros_pos, zeros))
@@ -127,6 +130,16 @@ class Net(object):
         # ret = sum(int(x == y) for (x, y) in test_result)
         # print("accuracy: %d / %d = %f" % (ret, n, ret / n))
         return zeros_pos, zeros, ones_pos, ones
+
+    # ndarray with shape input_layer * 1
+    def classify(self, data):
+        return np.argmax(self.feed_forward(data))
+
+    def __vectorize(self, label):
+        r = np.zeros((self.layers[-1], 1))
+        r[label] = 1.0
+        return r
+
 
 
 # available activate functions
