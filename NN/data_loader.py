@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 
 def load_data():
-    f = open(r'../planesnet.json')
+    f = open(r'../../planesnet.json')
     planesnet = json.load(f)
     f.close()
 
@@ -24,7 +24,7 @@ def load_data():
 # return 1200 * 1 shape
 def grayify(data):
     im = data.reshape((3, 400)).T.reshape((20, 20, 3))
-    # im = Image.fromarray(im).filter(ImageFilter.SMOOTH).convert('L').convert('1')
-    im = Image.fromarray(im).convert('L')
+    im = Image.fromarray(im).filter(ImageFilter.SMOOTH).convert('L').convert('1')
+    # im = Image.fromarray(im).convert('L')
     return np.asarray(im).reshape(400, 1)
     # return data

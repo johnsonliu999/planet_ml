@@ -2,6 +2,7 @@ import codecs
 import json
 
 import numpy as np
+from PIL import Image
 
 
 class Net(object):
@@ -57,12 +58,24 @@ class Net(object):
         self.activate_prime = globals()["%s_prime" % self.act_fn]
 
     # training samples is [(input, ideal_output), ...]
-    def train(self, training_samples):
+    def train(self, training_samples, augment=False):
         for input_data, label in training_samples:
             ideal_output = self.__vectorize(label)
-            output = self.feed_forward(input_data)
-            output_error = self.cal_output_error(output, ideal_output)
-            self.back_propagate(output_error)
+            input_data = self._augment_input(input_data) if augment else [input_data]
+            for data in input_data:
+                output = self.feed_forward(data)
+                output_error = self.cal_output_error(output, ideal_output)
+                self.back_propagate(output_error)
+
+    # input_data: 400 * 1
+    # augment by rotating, will generate 4 images including the origin
+    # will return 4 400 * 1 augmented inputs
+    def _augment_input(data):
+        ret = [data]
+        img = Image.fromarray(data.reshape((20, 20)))
+        for angle in [90, 180, 270]:
+            ret.append(np.array(img.rotate(angle)).reshape(400, 1))
+        return ret
 
     # return last layer output with shape L * 1
     def feed_forward(self, input_data):

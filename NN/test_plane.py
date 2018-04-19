@@ -3,29 +3,7 @@ import random
 from PIL import Image
 from matplotlib import pyplot as plt
 import numpy as np
-from ml import Network
 from PIL import ImageFilter
-
-############ test for show
-# im = Image.open("../img/20170707_181137_100b_3B_Visual_cropped.png")
-#
-# imarray = np.asarray(im)
-# part = imarray[182:202, 475:495, 0:3]
-# print(part.shape)
-#
-# part_im = Image.fromarray(part)
-# # part_im = part_im.convert('1')
-# part_im = part_im.filter(ImageFilter.SMOOTH)
-# print(np.asarray(part_im).shape)
-# plt.imshow(part_im)
-# plt.show()
-#
-# # part = part.reshape((400, 3)).T.reshape((1200, 1))
-# #
-# # part = part.reshape((3, 400)).T.reshape(20, 20, 3)
-# #
-# # plt.imshow(part)
-# # plt.show()
 
 
 ######### test for training
