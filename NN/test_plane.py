@@ -10,6 +10,7 @@ from PIL import ImageFilter
 from plane_net import Net
 from data_loader import load_data
 
+
 training_data, test_data = load_data()
 
 z_acc = []
@@ -17,10 +18,10 @@ o_acc = []
 acc = []
 
 net = Net([400, 50, 2], "sigmoid", 3.0, 30)
-for i in range(100):
+for i in range(50):
     random.shuffle(training_data)
     print("******* %d ******" % i)
-    net.train(training_data)
+    net.train(training_data, augment=True)
     z_p, z, o_p, o = net.test(test_data)
     z_acc.append(z_p / z)
     o_acc.append(o_p / o)

@@ -70,7 +70,7 @@ class Net(object):
     # input_data: 400 * 1
     # augment by rotating, will generate 4 images including the origin
     # will return 4 400 * 1 augmented inputs
-    def _augment_input(data):
+    def _augment_input(self, data):
         ret = [data]
         img = Image.fromarray(data.reshape((20, 20)))
         for angle in [90, 180, 270]:
