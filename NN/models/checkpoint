@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/guolinliu/projects/python/3.6/planesnet/ml/NN/models/tf_model"
+all_model_checkpoint_paths: "/Users/guolinliu/projects/python/3.6/planesnet/ml/NN/models/tf_model"
