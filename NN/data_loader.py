@@ -4,20 +4,31 @@ import numpy as np
 from PIL import Image, ImageFilter
 from matplotlib import pyplot as plt
 
+DATA_PATH = '../CNN Topologies/data/'
 
 def load_data():
-    f = open(r'../../planesnet.json')
-    planesnet = json.load(f)
+    f = open(DATA_PATH + 'xtrain')
+    xtrain = json.load(f)["data"]
+    print(np.array(xtrain[0]).shape)
     f.close()
 
-    ims = [grayify(np.reshape(im, (1200, 1)).astype('uint8')) for im in planesnet['data']]
-    labels = planesnet['labels']
-    data = list(zip(ims, labels))
-    random.shuffle(data)
+    f = open(DATA_PATH + 'ytrain')
+    ytrain = json.load(f)["data"]
+    f.close()
 
-    cut = int(len(data) * 0.6)
-    training_data = data[:cut]
-    test_data = data[cut:]
+    f = open(DATA_PATH + 'xtest')
+    xtest = json.load(f)["data"]
+    f.close()
+
+    f = open(DATA_PATH + 'ytest')
+    ytest = json.load(f)["data"]
+    f.close()
+
+    xtrain = [grayify(np.reshape(im, (1200,1)).astype('uint8')) for im in xtrain]
+    xtest = [grayify(np.reshape(im, (1200,1)).astype('uint8')) for im in xtest]
+    training_data = list(zip(xtrain, ytrain))
+    test_data = list(zip(xtest, ytest))
+
     return training_data, test_data
 
 
