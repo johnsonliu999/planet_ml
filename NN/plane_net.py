@@ -1,3 +1,7 @@
+"""
+plane_net.py :
+The plane recognition network
+"""
 import codecs
 import json
 

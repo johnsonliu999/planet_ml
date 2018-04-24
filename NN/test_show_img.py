@@ -1,3 +1,8 @@
+"""
+test_show_img.py :
+the tests for displaying the images
+"""
+
 from PIL import Image
 from matplotlib import pyplot as plt
 import numpy as np

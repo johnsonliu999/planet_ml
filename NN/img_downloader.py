@@ -1,3 +1,8 @@
+"""
+img_downloader.py :
+To download the large satellite images through the Planet API
+"""
+
 from planet import api
 from planet.api import downloader
 

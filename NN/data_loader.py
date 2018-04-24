@@ -1,3 +1,8 @@
+"""
+data_download.py :
+To load the data and generate the training data and test data for the networks
+"""
+
 import json
 import random
 import numpy as np

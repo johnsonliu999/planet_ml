@@ -1,3 +1,7 @@
+"""
+test_digits.py :
+the tests for digit recognizing network
+"""
 from digit_net import Net
 from mnist_loader import load_data_wrapper
 from matplotlib import pyplot as plt

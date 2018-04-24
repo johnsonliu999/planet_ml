@@ -1,3 +1,8 @@
+"""
+digit_net.py :
+For handwritten digit recognition, to compare with the plane recognition network
+"""
+
 import codecs
 import json
 

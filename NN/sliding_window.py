@@ -1,3 +1,7 @@
+"""
+sliding_window :
+The sliding window method to scan through the satellite image and mark out the planes
+"""
 from PIL import Image, ImageFilter
 import numpy as np
 from matplotlib import pyplot as plt, patches
@@ -10,24 +14,6 @@ im = Image.open("../img/20170707_181137_100b_3B_Visual_cropped.png")
 
 fig, ax = plt.subplots(1)
 ax.imshow(im)
-
-
-#
-# rect = patches.Rectangle((2000, 3000), 20, 20, linewidth=1, edgecolor='r', facecolor='none')
-#
-# ax.add_patch(rect)
-#
-# plt.imshow(im)
-# plt.show()
-
-
-# imgplot = imgplot.addsubplot()
-
-# imarray = np.array(im)
-
-# imdata = imarray[2000:2000+20, 3000: 3000+20, 0:3]
-
-# print(net.classify(imdata.reshape((1200, 1))))
 
 def sliding_window(image, step_size, net):
     ret = []

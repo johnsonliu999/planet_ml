@@ -1,3 +1,7 @@
+"""
+test_plane.py :
+the tests for plane recognizing network
+"""
 import random
 
 from PIL import Image
@@ -46,13 +50,6 @@ print("precision : ", precision)
 print("recal : ", recall)
 print("accuracy : ", accuracy)
 print("f_measure : ", f_measure)
-
-# precision :  0.6708542713567839
-# recal :  0.8030075187969925
-# accuracy :  0.8771491090965927
-# f_measure :  0.731006160164271
-
-# net.save("./models/gray_400_50_2_sigmoid_3.0_30")
 
 print("z_acc: ", z_acc)
 print("o_acc: ", o_acc)
