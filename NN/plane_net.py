@@ -92,6 +92,7 @@ class Net(object):
     # return output error with the shape of L * 1
     def cal_output_error(self, output, ideal_output):
         return (output - ideal_output) * self.activate_prime(self.zs[-1])
+        # return (output - ideal_output)
 
     # no return, but will update count, acc_delta_w and acc_delta_w
     # if count reaches batch_size, will update weights and biases

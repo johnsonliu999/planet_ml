@@ -36,6 +36,6 @@ def load_data():
 def grayify(data):
     im = data.reshape((3, 400)).T.reshape((20, 20, 3))
     im = Image.fromarray(im).filter(ImageFilter.SMOOTH).convert('L').convert('1')
-    # im = Image.fromarray(im).convert('L')
+    # im = Image.fromarray(im).convert('1')
     return np.asarray(im).reshape(400, 1)
     # return data
