@@ -1,0 +1,32 @@
+Convolutional Neural Network:
+Brief introdution to CNNs
+Artificial neural networks are computing systems that are inspired by the biological neural networks in the human brain.
+Convolutional neural network (CNN, or ConvNet) is a class of deep, feed-forward artificial neural networks that has successfully been applied to analyzing visual imagery. In this project, we use CNNs to identify and mark airplanes from satellite imagery. We have also used few different CNN architectures and compared their accuracies.
+
+
+A CNN consists of an input layer, output layer and multiple hidden layers. The hidden layers of a CNN typically consist of convolutional layers, pooling layers, fully connected layers and normalization layers. By varying the number of convolutional, pooling, fully connected and normalization layers and by combining these layers, we get different neural network configurations.
+
+In this project we have tried the following network architectures:
+1. CNN1
+2. CNN2
+3. AlexNet
+4. VGGnNet
+
+CNN1:
+Convolutional -> MaxPool ->Convolutional -> MaxPool ->Convolutional -> MaxPool ->Convolutional -> MaxPool ->Convolutional -> MaxPool -> Fully connected -> Dropout -> Fully connected -> Regression
+
+CNN2:
+Convolutional -> MaxPool -> Convolutional -> Convolutional -> MaxPool -> Fully connected -> Dropout -> Fully connected -> Regression
+
+AlexNet:
+Convolutional -> MaxPool -> Normalization -> Convolutional -> MaxPool -> Normalization -> Convolutional -> Convolutional -> Convolutional -> MaxPool -> Normalization -> Fully connected -> Dropout -> Fully connected -> Dropout -> Fully connected -> Regression
+
+VGGNet:
+Convolutional -> Convolutional -> MaxPool -> Convolutional -> Convolutional -> MaxPool -> Convolutional -> Convolutional -> Convolutional -> MaxPool -> Convolutional -> Convolutional -> Convolutional -> MaxPool -> Convolutional -> Convolutional -> Convolutional -> MaxPool -> Fully connected -> Dropout -> Fully connected -> Dropout -> Fully connected -> Regression
+
+CNN1, CNN2 and VGGNet performed equally well and AlexNet was slightly lagging behind when comapred to the other three.
+
+Here are some of the results obtained by running each of these Convolutional neural networks on the test image:
+ 
+
+
